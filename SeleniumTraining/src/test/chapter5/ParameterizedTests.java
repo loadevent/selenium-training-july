@@ -55,7 +55,9 @@ public class ParameterizedTests {
     @MethodSource(value = "veggies")
     void getVeggies(String veg){
         System.out.println("veg = " + veg);
+        assertTrue(veg.contains("o"));
     }
+
     List<String> veggies(){
        return Arrays.asList("Carrot", "Tomato", "Lettuce");
     }
