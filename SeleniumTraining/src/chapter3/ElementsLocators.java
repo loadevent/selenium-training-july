@@ -15,7 +15,6 @@ public class ElementsLocators {
         locateByName();
         locateById();
         locateByCSS();
-
     }
 
     public static void locateByName(){
