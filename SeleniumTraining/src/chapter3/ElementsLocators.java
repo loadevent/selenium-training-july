@@ -13,8 +13,9 @@ public class ElementsLocators {
         driver.manage().window().maximize();
 
         locateByName();
-        locateById();
+       locateById();
         locateByCSS();
+
     }
 
     public static void locateByName(){
