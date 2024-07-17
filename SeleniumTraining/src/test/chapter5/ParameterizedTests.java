@@ -3,6 +3,7 @@ package chapter5;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -57,8 +58,15 @@ public class ParameterizedTests {
         System.out.println("veg = " + veg);
         assertTrue(veg.contains("o"));
     }
-
     List<String> veggies(){
        return Arrays.asList("Carrot", "Tomato", "Lettuce");
     }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/students.csv",numLinesToSkip = 1)
+    void csv_students(String firstname, String lastname, int testMark){
+        System.out.println("firstname = " + firstname + ", lastname = "
+                + lastname + ", testMark = " + testMark);
+    }
+
 }
